@@ -1,7 +1,8 @@
-var Author = require('../models/author');
-var async = require('async');
-var Book = require('../models/book');
 const { body,validationResult } = require('express-validator');
+
+const Author = require('../models/author');
+const async = require('async');
+const Book = require('../models/book');
 // Display list of all Authors.
 exports.author_list = function(req, res, next) {
 
@@ -39,6 +40,7 @@ exports.author_detail = function(req, res, next) {
     });
 
 };
+
 // Display Author create form on GET.
 exports.author_create_get = function(req, res, next) {
     res.render('author_form', { title: 'Create Author'});
@@ -106,6 +108,7 @@ exports.author_delete_get = function(req, res, next) {
     });
 
 };
+
 // Handle Author delete on POST.
 exports.author_delete_post = function(req, res, next) {
 
